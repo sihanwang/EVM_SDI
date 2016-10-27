@@ -81,7 +81,7 @@ public class SDIGenerator {
 		final Configuration HbaseConf = new Configuration();
 		HbaseConf.addResource(new FileInputStream(HbaseConfFile));
 		HbaseConf.addResource(new FileInputStream(CoreConfFile));
-		System.setProperty("java.security.krb5.conf", System.getProperty("user.dir")+"\\"+krb5ConfFile);
+		System.setProperty("java.security.krb5.conf", krb5ConfFile);
 		UserGroupInformation.setConfiguration(HbaseConf); 
 		UserGroupInformation.loginUserFromKeytab(titanUserID, keytabFile);
 		
